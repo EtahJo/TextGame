@@ -1,4 +1,5 @@
-﻿using System;
+﻿global using TextGame.Abstract;
+using System;
 using TextGame.States;
 namespace TextGame
 {

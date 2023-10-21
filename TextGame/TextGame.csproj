@@ -11,10 +11,12 @@
     <None Remove="Commands\" />
     <None Remove="States\" />
     <None Remove="Abstract\" />
+    <None Remove="Game Classes\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Commands\" />
     <Folder Include="States\" />
     <Folder Include="Abstract\" />
+    <Folder Include="Game Classes\" />
   </ItemGroup>
 </Project>

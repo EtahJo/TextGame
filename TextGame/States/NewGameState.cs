@@ -18,7 +18,7 @@ namespace TextGame.States
             Console.WriteLine("_____________________");
             Console.WriteLine("Go back to main menu - [Back]");
             Console.WriteLine("_____________________");
-            Console.WriteLine("Do you want to proceed to new game?? - [Yes/No]");
+            Console.WriteLine("Are you sure you want to proceed to new game - (yes/no)??");
         }
 
         public ICommand GetCommand()
@@ -30,7 +30,9 @@ namespace TextGame.States
             }
             if (request == "yes")
             {
-                return new NewGameCommand();
+                Console.WriteLine("What is your name");
+                string userName = Console.ReadLine();
+                return new NewGameCommand(userName);
             }
             return new InvalidCommand();
             
