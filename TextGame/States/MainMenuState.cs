@@ -17,7 +17,7 @@ namespace TextGame.States
             Console.WriteLine("Welcome to Etah's Text Game");
             Console.WriteLine("____________________");
             Console.WriteLine("What would you like to try?");
-            Console.WriteLine("[Main Menu - M] [Load File - L] [ Launch New Game - G] [Save File - S] [Help - H]" );
+            Console.WriteLine("[Main Menu - M] [Load File - L] [ Launch New Game - G] [Save File - S] [Help - H] [Load Old Game - LG]" );
         }
         public ICommand GetCommand()
         {
@@ -38,6 +38,11 @@ namespace TextGame.States
             if (command == "S")
             {
                 return new SwitchStateCommand(_manager, new SaveFileState(_manager,this));
+
+            }
+            if (command == "LG")
+            {
+                return new SwitchStateCommand(_manager, new LoadGameState());
 
             }
 

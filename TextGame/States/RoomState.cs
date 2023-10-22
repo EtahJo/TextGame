@@ -26,11 +26,12 @@ namespace TextGame.States
             if(request == "load")
             {
                 return new SwitchStateCommand(_manager, new LoadGameState());
-            }else if(request == "save")
-            {
-                return new SwitchStateCommand(_manager, new SaveGameState());
-
             }
+            //else if(request == "save")
+            //{
+            //    return new SwitchStateCommand(_manager, new SaveGameState());
+
+            //}
             return null;
         }
     }

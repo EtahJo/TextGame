@@ -7,27 +7,21 @@ namespace TextGame.States
 	{
         public Player Player { get; set; }
 
-		public LoadGameState(Player player)
+		public LoadGameState()
 		{
-            Player = player;
+          
 		}
         public void Render()
         {
-            Console.WriteLine("Would you like to load game or transition to player's room");
+            Console.WriteLine("What is the name of the game file? ");
         }
         public ICommand GetCommand()
         {
-            var request = Console.ReadLine();
-            if(request == "load")
+            var fileName = Console.ReadLine();
+            if(fileName != "")
             {
-                Console.WriteLine("What is the file name?");
-                var gameFile = Console.ReadLine();
-                return new LoadGameCommand(gameFile,Player);
-
-            }else if (request == "transition")
-            {
-                var manager = new StateManager();
-                return new SwitchStateCommand(manager, new RoomState());
+                var gameFileName = Console.ReadLine();
+                return new LoadGameCommand(gameFileName);
             }
             return null;
         }
