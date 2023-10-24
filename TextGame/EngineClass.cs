@@ -1,11 +1,10 @@
 ﻿using System;
 namespace TextGame
 {
-	public class EngineClass
+	public static class EngineClass
 	{
-		public EngineClass()
-		{
-		}
+		public static IGame CurrentGame { get; set; }
+		public static IState CurrentState { get; set; }
 	}
 }
 

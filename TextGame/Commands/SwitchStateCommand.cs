@@ -15,6 +15,7 @@ namespace TextGame.Commands
 
         public void Execute()
         {
+			EngineClass.CurrentState = _state;
 			_state.Render();
 			var command = _state.GetCommand();
 			command.Execute();

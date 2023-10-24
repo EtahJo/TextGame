@@ -19,13 +19,14 @@ namespace TextGame
 
             //var player = new Player(Guid.NewGuid());
             //player.Name = "etah";
-           
+
 
             //game.Player = player;
             //game.Player.CurrentRoom = room1;
             //game.AddGameObject(player);
             //game.AddGameObject(room1);
             //game.AddGameObject(room2);
+            //Console.WriteLine(EngineClass.CurrentState.GetType);
             var manager = new StateManager();
             manager.Run(new MainMenuState(manager));
             Console.ReadKey();

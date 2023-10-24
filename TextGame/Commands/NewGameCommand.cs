@@ -13,7 +13,9 @@ namespace TextGame.Commands
         }
         public void Execute()
         {
+           
             Game game = new Game();
+            EngineClass.CurrentGame = game;
             var firstRoom = new Room(Guid.NewGuid());
             firstRoom.Name = "Room One";
             firstRoom.Description = "This is the default room created";

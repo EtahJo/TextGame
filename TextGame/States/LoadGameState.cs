@@ -17,13 +17,10 @@ namespace TextGame.States
         }
         public ICommand GetCommand()
         {
-            var fileName = Console.ReadLine();
-            if(fileName != "")
-            {
+
                 var gameFileName = Console.ReadLine();
                 return new LoadGameCommand(gameFileName);
-            }
-            return null;
+           
         }
 
       
