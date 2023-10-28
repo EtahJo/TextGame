@@ -27,8 +27,12 @@ namespace TextGame
             //game.AddGameObject(room1);
             //game.AddGameObject(room2);
             //Console.WriteLine(EngineClass.CurrentState.GetType);
-            var manager = new StateManager();
-            manager.Run(new MainMenuState(manager));
+            while (true)
+            {
+                var manager = new StateManager();
+                manager.Run(new MainMenuState(manager));
+            }
+          
             Console.ReadKey();
         }
     }

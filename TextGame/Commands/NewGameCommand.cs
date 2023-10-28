@@ -121,11 +121,27 @@ namespace TextGame.Commands
             }
 
             Console.WriteLine("____________________");
-            Console.WriteLine("Would you like to save game? - (yes/no)");
+            Console.WriteLine("Would you like to save game? - (yes/no) / Or Enter new room?");
             string saveGameResponse = Console.ReadLine();
             if (saveGameResponse == "yes")
             {
                 var command = new SwitchStateCommand(new StateManager(), new SaveGameState(game));
+                command.Execute();
+            }else if(saveGameResponse=="new room")
+            {
+                Console.WriteLine("___________");
+                Console.WriteLine(" You presently have the following rooms available");
+                foreach(var item in game.GameObjects)
+                {
+                    var room = item as Room;
+                    if(room != null)
+                    {
+                        Console.WriteLine("{0} -{1}", room.Name, room.Description);
+                    }
+                }
+                Console.WriteLine("Pick your new room");
+                var newRoom = Console.ReadLine();
+                var command = new SwitchRoomCommand(game,newRoom);
                 command.Execute();
             }
         }
