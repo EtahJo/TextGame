@@ -1,5 +1,6 @@
 ﻿using System;
 using TextGame.GameClasses;
+using TextGame.States;
 namespace TextGame.Commands
 {
 	public class PickUpItemCommand:ICommand
@@ -21,10 +22,14 @@ namespace TextGame.Commands
         public void Execute()
         {
             Console.WriteLine("You selected {0}", _item.Name);
-            Console.WriteLine("What will you like to do with it ?");
+            Console.WriteLine("Will you like to use item ?");
             var request = Console.ReadLine();
-            var command = new UseItemCommand(_item, request);
-            command.Execute();
+            if(request== "yes")
+            {
+                var command = new SwitchStateCommand(new StateManager(), new UseItemState(_item));
+                command.Execute();
+
+            }
 
         }
     }

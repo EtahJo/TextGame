@@ -23,6 +23,10 @@ namespace TextGame.GameClasses
            
 
         }
+        public int GetRoomItemCount()
+        {
+            return -_items.Count;
+        }
         public List<IItem> DisplayItems()
         {
             //int index = 1;

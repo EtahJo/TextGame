@@ -121,7 +121,7 @@ namespace TextGame.Commands
             }
 
             Console.WriteLine("____________________");
-            Console.WriteLine("Would you like to save game? - (yes/no) / Or Enter new room?");
+            Console.WriteLine("Would you like to save game? - (yes/no) / Or Enter new room / View Inventory?");
             string saveGameResponse = Console.ReadLine();
             if (saveGameResponse == "yes")
             {
@@ -142,6 +142,11 @@ namespace TextGame.Commands
                 Console.WriteLine("Pick your new room");
                 var newRoom = Console.ReadLine();
                 var command = new SwitchRoomCommand(game,newRoom);
+                command.Execute();
+            }
+            else if(saveGameResponse== "inventory")
+            {
+                var command = new SwitchStateCommand(new StateManager(), new ViewInventaryState(game));
                 command.Execute();
             }
         }
