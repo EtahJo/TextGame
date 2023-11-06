@@ -29,15 +29,7 @@ namespace TextGame.GameClasses
         }
         public List<IItem> DisplayItems()
         {
-            //int index = 1;
-            //foreach(var item in _items)
-            //{
-            //    Console.WriteLine("{0}-{1}",index,item.Name);
-            //    index++;
-            //}
             return _items;
-           
-
         }
         public void Save(BinaryWriter writer)
         {

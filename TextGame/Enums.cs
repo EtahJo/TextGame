@@ -4,7 +4,8 @@ namespace TextGame
 	public enum GameObjectType
 	{
 		Room,
-		Player
+		Player,
+		Item
 	}
 }
 

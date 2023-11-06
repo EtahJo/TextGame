@@ -26,6 +26,31 @@ namespace TextGame.Commands
             }
             Console.WriteLine("You are now in room {0}", Game.Player.CurrentRoom.Name);
 
+            var roomPresence = true;
+            while (roomPresence)
+            {
+                Console.WriteLine("What will you like to do next");
+                var request = Console.ReadLine();
+                var parts = request?.Split(":");
+
+                if (parts[0] == "add")
+                {
+                    var item = new Item(parts[1], false);
+                    Game.Player.CurrentRoom.AddItem(item);
+
+                }
+                else if (request == "view items")
+                {
+                    var command = new ViewInventoryCommand(Game.Player.CurrentRoom);
+                    command.Execute();
+                }else
+                {
+                    roomPresence = false;
+                }
+
+            }
+            
+
         }
     }
 }

@@ -12,7 +12,7 @@ namespace TextGame.Commands
 
         public void Execute()
         {
-            Console.WriteLine("Below are the items available in room {0}", _room);
+            Console.WriteLine("Below are the items available in room {0}", _room.Name);
             int index = 1;
             foreach(var item in _room.DisplayItems())
             {
